@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Learners</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        #logo {
+            font-size: 2em;
+            color: #1155cc;
+            text-shadow: 2px 2px 4px #000000;
+            margin-top: 20px;
+        }
+
+        #loginContainer {
+            margin: 50px auto;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        #shiftIcon {
+            font-size: 1.5em;
+            color: #1155cc;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #1155cc;
+            color: #ffffff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        #signupLink, #backToLogin {
+            margin-top: 20px;
+            color: #1155cc;
+            cursor: pointer;
+        }
+
+        #signupSuccessTemplate {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="logo">
+        Welcome Learners
+    </div>
+
+    <div id="loginContainer">
+
+        <!-- Login Form -->
+        <form id="loginForm">
+            <input type="text" placeholder="Mobile Number or Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Shift Icon -->
+        <div id="shiftIcon">➡️</div>
+
+        <!-- Signup Form -->
+        <form id="signupForm">
+            <input type="text" placeholder="First Name" required>
+            <input type="text" placeholder="Last Name" required>
+            <input type="text" placeholder="Mobile Number" required>
+            <input type="password" placeholder="Create Password" required>
+            <input type="password" placeholder="Confirm Password" required>
+            <input type="text" placeholder="Enter Captcha" required>
+            <button type="submit" onclick="showSignupSuccess()">Sign Up</button>
+        </form>
+
+        <!-- Signup Success Template -->
+        <div id="signupSuccessTemplate">
+            <p>You have successfully signed up!</p>
+            <p>Please sign in to continue.</p>
+            <div id="backToLogin" onclick="showLoginForm()">Back to Login</div>
+        </div>
+
+        <!-- Signup Link -->
+        <div id="signupLink">Don't have login credentials? <a href="#" onclick="showSignupForm()">Sign Up</a></div>
+    </div>
+
+    <script>
+        function showSignupForm() {
+            document.getElementById('signupForm').style.display = 'block';
+            document.getElementById('signupSuccessTemplate').style.display = 'none';
+        }
+
+        function showSignupSuccess() {
+            document.getElementById('signupForm').style.display = 'none';
+            document.getElementById('signupSuccessTemplate').style.display = 'block';
+        }
+
+        function showLoginForm() {
+            document.getElementById('loginForm').style.display = 'block';
+            showSignupForm();
+        }
+    </script>
+
+</body>
+</html>

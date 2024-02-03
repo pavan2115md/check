@@ -13,7 +13,6 @@ pipeline {
             steps {
                 // Execute a shell command
                 sh 'docker run -it --name my_container -p 8080:80 -d html-docker:v1'
-'
 
             }
         }

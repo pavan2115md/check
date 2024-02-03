@@ -5,14 +5,14 @@ pipeline {
         stage('Build') {
             steps {
                 // Execute a shell command
-                sh 'sudo docker build -t html-docker .'
+                sh 'docker build -t html-docker .'
 
             }
         }
         stage('Run') {
             steps {
                 // Execute a shell command
-                sh 'sudo docker run -it html-docker'
+                sh 'docker run -it html-docker'
 
             }
         }

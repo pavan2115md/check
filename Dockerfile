@@ -11,7 +11,7 @@ COPY package*.json ./
 RUN npm install
 
 # Copy the HTML file to the working directory
-COPY index:1.html .
+COPY index1.html .
 
 # Expose port 8080
 EXPOSE 8080

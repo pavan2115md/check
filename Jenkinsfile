@@ -5,14 +5,14 @@ pipeline {
         stage('Build') {
             steps {
                 // Execute a shell command
-                sh 'docker build -t html-docker1:v1 .'
+                sh 'docker build -t my-html-container .'
 
             }
         }
         stage('Run') {
             steps {
                 // Execute a shell command
-                sh 'docker run -d html-docker1:v1'
+                sh 'docker run -p 8080:80 my-html-container'
 
             }
         }

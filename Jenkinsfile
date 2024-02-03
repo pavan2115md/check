@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Execute a shell command
-                sh 'docker build -t html-docker1:v1.'
+                sh 'docker build -t html-docker1:v1 .'
 
             }
         }

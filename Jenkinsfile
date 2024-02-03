@@ -12,7 +12,7 @@ pipeline {
         stage('Run') {
             steps {
                 // Execute a shell command
-                sh 'docker run -d -p 80:80 html-docker:v1'
+                sh 'docker run -it html-docker:v1'
 
             }
         }

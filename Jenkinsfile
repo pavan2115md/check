@@ -4,6 +4,7 @@ pipeline {
     environment {
         DOCKER_IMAGE_NAME = 'pavan'
         GITHUB_REPO_URL = 'https://github.com/pavan2115md/check.git'
+        GITHUB_CREDENTIALS = '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'
     }
 
     stages {

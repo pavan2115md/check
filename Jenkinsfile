@@ -2,8 +2,8 @@ pipeline {
     agent any
     
     environment {
-        DOCKER_IMAGE_NAME = 'your-docker-image-name'
-        GITHUB_REPO_URL = 'https://github.com/your-username/your-repo.git'
+        DOCKER_IMAGE_NAME = 'pavan'
+        GITHUB_REPO_URL = 'https://github.com/pavan2115md/check.git'
     }
 
     stages {
@@ -17,7 +17,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Build your code (replace 'your-build-command' with the actual build command)
-                sh 'your-build-command'
+                sh 'docker build -t pavan .'
             }
         }
 
@@ -33,7 +33,7 @@ pipeline {
         stage('Run Containers') {
             steps {
                 // Run Docker containers (replace 'your-docker-run-command' with the actual run command)
-                sh 'your-docker-run-command'
+                sh 'docker run -d pavan'
             }
         }
     }

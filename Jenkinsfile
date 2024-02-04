@@ -2,7 +2,6 @@ pipeline {
     agent any
     
     environment {
-        DOCKER_IMAGE_NAME = 'pavan'
         GITHUB_REPO_URL = 'https://github.com/pavan2115md/check.git'
         GITHUB_CREDENTIALS = 'WEBAC'
     }
@@ -19,15 +18,6 @@ pipeline {
             steps {
                 // Build your code (replace 'your-build-command' with the actual build command)
                 sh 'docker build -t pavan .'
-            }
-        }
-
-        stage('Dockerize') {
-            steps {
-                // Build Docker image
-                script {
-                    docker.build(env.DOCKER_IMAGE_NAME)
-                }
             }
         }
 
